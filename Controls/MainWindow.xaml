@@ -1,0 +1,61 @@
+﻿<Window x:Class="Controls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"  />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="textBox"
+                   Margin="5,5,5,5"                   
+                   TextWrapping="Wrap"
+                   Text="" 
+                   SelectionBrush="White" 
+                   Grid.Row="1"                       
+                   />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0"  Margin="5,5,5,5" >
+            <ToolBar>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged">
+                    <TextBlock Text="Arial"/>
+                    <TextBlock Text="Times New Roman"/>
+                    <TextBlock Text="Verdana"/>
+                </ComboBox>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="50" SelectionChanged="ComboBox_SelectionChanged_1">
+                    <TextBlock Text="16"/>
+                    <TextBlock Text="18"/>
+                    <TextBlock Text="20"/>
+                </ComboBox>
+            </ToolBar>
+            <ToolBar>
+                <ToggleButton Height="20" Width="20" Margin="5" Padding="3" Click="Button_Click" IsChecked="False">
+                    <Image Source="Data/Жирный.png"/>
+                </ToggleButton>
+                <ToggleButton Height="20" Width="20" Margin="5" Padding="3" Click="Button_Click_1" IsChecked="False">
+                    <Image Source="Data/Курсив.png"/>
+                </ToggleButton>
+                <ToggleButton Height="20" Width="20" Margin="5" Padding="3"   IsChecked="False" Click="ToggleButton_Click">
+                    <Image Source="Data/Подчерк.png"/>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar>
+                <StackPanel>
+                    <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Красный" Checked="RadioButton_Checked_1"/>
+                </StackPanel>
+                
+            </ToolBar>    
+            
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>
