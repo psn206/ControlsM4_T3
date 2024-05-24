@@ -10,18 +10,28 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"  />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="Файл" HorizontalAlignment="Right">
+                <MenuItem Header = "Открыть" Click="MenuItem_Click"/>
+                <MenuItem Header = "Сохранить" Click="MenuItem_Click_1"/>
+                <Separator/>
+                <MenuItem Header = "Закрыть" Click="MenuItem_Click_2"/>
+            </MenuItem>
+        </Menu>
 
         <TextBox x:Name="textBox"
                    Margin="5,5,5,5"                   
                    TextWrapping="Wrap"
                    Text="" 
                    SelectionBrush="White" 
-                   Grid.Row="1"                       
+                   Grid.Row="2"                       
                    />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0"  Margin="5,5,5,5" >
+        <StackPanel Orientation="Horizontal" Grid.Row="1"  Margin="5,5,5,5" >
             <ToolBar>
                 <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged">
                     <TextBlock Text="Arial"/>
@@ -50,9 +60,9 @@
                     <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"/>
                     <RadioButton Content="Красный" Checked="RadioButton_Checked_1"/>
                 </StackPanel>
-                
-            </ToolBar>    
-            
+
+            </ToolBar>
+
         </StackPanel>
 
 

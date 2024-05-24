@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +48,7 @@ namespace Controls
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            textBox.FontStyle =textBox.FontStyle == FontStyles.Normal ? FontStyles.Italic : FontStyles.Normal;
+            textBox.FontStyle = textBox.FontStyle == FontStyles.Normal ? FontStyles.Italic : FontStyles.Normal;
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
@@ -69,6 +71,46 @@ namespace Controls
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
         {
             textBox.Foreground = Brushes.Red;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                textBox.Text = File.ReadAllText(openFileDialog.FileName);
+            }
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                File.WriteAllText(saveFileDialog.FileName, textBox.Text);
+            }
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            var rezult = MessageBox.Show("Сохранить файл?",
+                      "Сообщение",
+                       MessageBoxButton.YesNo,
+                       MessageBoxImage.Question
+                      );
+            if (rezult == MessageBoxResult.Yes)
+            {
+                MenuItem_Click_1(sender, e);
+                Application.Current.Shutdown();
+            }
+            else
+            {
+                Application.Current.Shutdown();
+            }
+
+
         }
     }
 }
