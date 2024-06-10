@@ -27,8 +27,6 @@ namespace Controls
             InitializeComponent();
         }
 
-
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string fontName = ((sender as ComboBox).SelectedItem as TextBlock).Text;

@@ -6,8 +6,14 @@
         xmlns:local="clr-namespace:Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="MenuItem_Click"/>
+        <CommandBinding Command="Save" Executed="MenuItem_Click_1"/>
+        <CommandBinding Command="Close" Executed="MenuItem_Click_2"/>               
 
+    </Window.CommandBindings>
+    
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -16,10 +22,16 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="Файл" HorizontalAlignment="Right">
-                <MenuItem Header = "Открыть" Click="MenuItem_Click"/>
-                <MenuItem Header = "Сохранить" Click="MenuItem_Click_1"/>
+                <MenuItem Header = "Открыть" Command="Open"/>
+                <MenuItem Header = "Сохранить" Command="Save"/>
                 <Separator/>
-                <MenuItem Header = "Закрыть" Click="MenuItem_Click_2"/>
+                <MenuItem Header = "Закрыть" Command="Close"/>
+            </MenuItem>
+
+            <MenuItem Header="Правка" HorizontalAlignment="Right">
+                <MenuItem Header = "Копировать" Command="Copy"/>
+                <MenuItem Header = "Вставить" Command="Paste"/>
+               
             </MenuItem>
         </Menu>
 
@@ -27,7 +39,6 @@
                    Margin="5,5,5,5"                   
                    TextWrapping="Wrap"
                    Text="" 
-                   SelectionBrush="White" 
                    Grid.Row="2"                       
                    />
 
@@ -45,7 +56,7 @@
                 </ComboBox>
             </ToolBar>
             <ToolBar>
-                <ToggleButton Height="20" Width="20" Margin="5" Padding="3" Click="Button_Click" IsChecked="False">
+                <ToggleButton Height="20" Width="20" Margin="5" Padding="3"  Click="Button_Click" IsChecked="False">
                     <Image Source="Data/Жирный.png"/>
                 </ToggleButton>
                 <ToggleButton Height="20" Width="20" Margin="5" Padding="3" Click="Button_Click_1" IsChecked="False">
