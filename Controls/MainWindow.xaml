@@ -56,7 +56,7 @@
                 </ComboBox>
             </ToolBar>
             <ToolBar>
-                <ToggleButton Height="20" Width="20" Margin="5" Padding="3"  Click="Button_Click" IsChecked="False">
+                <ToggleButton Height="20" Width="20" Margin="5" Padding="3" Click="Button_Click" IsChecked="False">
                     <Image Source="Data/Жирный.png"/>
                 </ToggleButton>
                 <ToggleButton Height="20" Width="20" Margin="5" Padding="3" Click="Button_Click_1" IsChecked="False">
