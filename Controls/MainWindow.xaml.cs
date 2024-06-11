@@ -110,5 +110,15 @@ namespace Controls
 
 
         }
+
+        private void themes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Uri theam = new Uri(themes.SelectedIndex == 0 ? "LightTheme.xaml" : "DarkTheme.xaml", UriKind.Relative);
+            ResourceDictionary dictionaryTheam = Application.LoadComponent(theam) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Add(dictionaryTheam);
+
+
+        }
     }
 }

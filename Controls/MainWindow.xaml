@@ -9,10 +9,10 @@
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="MenuItem_Click"/>
         <CommandBinding Command="Save" Executed="MenuItem_Click_1"/>
-        <CommandBinding Command="Close" Executed="MenuItem_Click_2"/>               
+        <CommandBinding Command="Close" Executed="MenuItem_Click_2"/>
 
     </Window.CommandBindings>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -31,7 +31,7 @@
             <MenuItem Header="Правка" HorizontalAlignment="Right">
                 <MenuItem Header = "Копировать" Command="Copy"/>
                 <MenuItem Header = "Вставить" Command="Paste"/>
-               
+
             </MenuItem>
         </Menu>
 
@@ -49,7 +49,9 @@
                           SelectedIndex="0"
                           Width="200"
                           SelectionChanged="ComboBox_SelectionChanged"
-                          ItemsSource="{StaticResource fonts}"/>
+                          ItemsSource="{StaticResource fonts}"
+                          Style="{DynamicResource ComboboxStyle}"
+                          />
 
 
                 <ComboBox Margin="5"
@@ -57,7 +59,9 @@
                           SelectedIndex="0"
                           Width="50"
                           SelectionChanged="ComboBox_SelectionChanged_1"
-                          ItemsSource="{StaticResource sizeFonts}"/>
+                          ItemsSource="{StaticResource sizeFonts}"
+                          Style="{DynamicResource ComboboxStyle}"
+                          />
 
             </ToolBar>
             <ToolBar>
@@ -76,12 +80,19 @@
                     <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"/>
                     <RadioButton Content="Красный" Checked="RadioButton_Checked_1"/>
                 </StackPanel>
-
             </ToolBar>
+            <ComboBox Name="themes"
+                      Width="100"
+                      Height="30"                  
+                      SelectedIndex="0" 
+                      ItemsSource="{StaticResource listThemes}"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      SelectionChanged="themes_SelectionChanged"
+                      Style="{DynamicResource ComboboxStyle}"
+                       />
+
 
         </StackPanel>
-
-
-
     </Grid>
 </Window>

@@ -18,5 +18,10 @@
         <system:Double>22</system:Double>
     </сollectionsSystem:ArrayList>
 
+    <сollectionsSystem:ArrayList x:Key="listThemes">
+        <system:String>Светлая</system:String>
+        <system:String>Темная</system:String>        
+    </сollectionsSystem:ArrayList>
+
 
 </ResourceDictionary>
