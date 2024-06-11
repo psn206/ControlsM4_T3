@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:сollectionsSystem="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    >
+    <сollectionsSystem:ArrayList x:Key="fonts">
+        <system:String>Arial</system:String>
+        <system:String>Times New Roman</system:String>
+        <system:String>Verdana</system:String>
+    </сollectionsSystem:ArrayList>
+
+    <сollectionsSystem:ArrayList x:Key="sizeFonts">
+        <system:Double>12</system:Double>
+        <system:Double>14</system:Double>
+        <system:Double>16</system:Double>
+        <system:Double>18</system:Double>
+        <system:Double>20</system:Double>
+        <system:Double>22</system:Double>
+    </сollectionsSystem:ArrayList>
+
+
+</ResourceDictionary>

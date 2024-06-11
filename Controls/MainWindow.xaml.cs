@@ -29,13 +29,13 @@ namespace Controls
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string fontName = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            string fontName = ((sender as ComboBox).SelectedItem as string);
             textBox.FontFamily = new FontFamily(fontName);
         }
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            double size = Convert.ToDouble(((sender as ComboBox).SelectedItem as TextBlock).Text);
+            double size =Convert.ToDouble((sender as ComboBox).SelectedItem);
             textBox.FontSize = size;
         }
 
